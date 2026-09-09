@@ -1,0 +1,53 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: pikvm-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+    networks:
+      - proxy
+      - private
+    depends_on:
+      - authelia
+      - dashboard
+
+  authelia:
+    image: authelia/authelia:latest
+    container_name: pikvm-authelia
+    restart: unless-stopped
+    volumes:
+      - ./authelia/config:/config
+      - ./authelia/secrets:/secrets:ro
+    networks:
+      - proxy
+    expose:
+      - "9091"
+
+  dashboard:
+    build:
+      context: ./dashboard
+    container_name: pikvm-dashboard
+    restart: unless-stopped
+    environment:
+      PORT: "3000"
+      PIKVM_CONFIG: /app/config/pikvms.json
+      STATUS_TIMEOUT_MS: "5000"
+    volumes:
+      - ./config:/app/config:ro
+    networks:
+      - proxy
+      - private
+    expose:
+      - "3000"
+
+networks:
+  proxy:
+    driver: bridge
+  private:
+    driver: bridge

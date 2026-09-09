@@ -1,0 +1,151 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0b0d10;
+  color: #f5f7fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.06), transparent 35%),
+    #0b0d10;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 5vw;
+  border-bottom: 1px solid #242930;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #8e98a7;
+  margin-bottom: 6px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 { margin-bottom: 0; font-size: 24px; }
+h2 { font-size: 30px; margin-bottom: 8px; }
+
+.logout {
+  color: #dfe5ec;
+  text-decoration: none;
+  border: 1px solid #343b45;
+  padding: 9px 13px;
+  border-radius: 8px;
+}
+
+.container {
+  width: min(1180px, 90vw);
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.intro p, .message, .sub {
+  color: #8e98a7;
+}
+
+.message {
+  margin: 25px 0;
+  min-height: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #11151a;
+  border: 1px solid #262d35;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.18);
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card h3 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.sub { font-size: 12px; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8e98a7;
+}
+
+.status.in_use .dot { background: #e6b84f; }
+.status.target_on .dot { background: #52d273; }
+.status.target_off .dot { background: #9aa4b2; }
+.status.no_target .dot { background: #d36a6a; }
+.status.offline .dot { background: #d36a6a; }
+
+dl {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 22px;
+}
+
+dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #222830;
+  padding-bottom: 9px;
+}
+
+dt { color: #7f8997; }
+dd { margin: 0; }
+
+.button {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #0b0d10;
+  background: #f1f3f5;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover { background: #dfe4e9; }
+.button.disabled { opacity: .45; cursor: not-allowed; }
+
+.error {
+  color: #e18b8b;
+  font-size: 12px;
+  margin: 12px 0 0;
+  overflow-wrap: anywhere;
+}

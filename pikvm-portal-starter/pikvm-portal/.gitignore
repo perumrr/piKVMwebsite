@@ -1,0 +1,18 @@
+# Secrets
+.env
+authelia/secrets/*
+!authelia/secrets/.gitkeep
+
+# Runtime
+authelia/config/db.sqlite3
+authelia/config/notification.txt
+authelia/logs/*
+caddy/data/*
+caddy/config/*
+dashboard/node_modules/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

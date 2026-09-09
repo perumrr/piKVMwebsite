@@ -1,0 +1,11 @@
+[
+  {
+    "id": "server-room-1",
+    "name": "pikvm03",
+    "host": "35.9.128.181",
+    "port": 443,
+    "url": "https://pikvm03.dhcp.egr.msu.edu",
+    "username": "admin",
+    "password": "admin"
+  }
+]
