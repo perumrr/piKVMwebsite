@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "rack1",
+    "name": "Server Rack 1",
+    "host": "https://192.168.1.50"
+  },
+  {
+    "slug": "rack2",
+    "name": "Server Rack 2",
+    "host": "https://192.168.1.51"
+  }
+]
