@@ -2,7 +2,7 @@
   {
     "slug": "rack1",
     "name": "kvm room",
-    "host": "https://pikvm03.dhcp.egr.msu.edu/login/"
+    "host": "https://pikvm03.dhcp.egr.msu.edu"
   },
   {
     "slug": "rack2",
