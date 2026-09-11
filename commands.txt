@@ -1,0 +1,2 @@
+curl -sk -i -v --max-time 15 -c cookies.txt -X POST https://pikvm03.dhcp.egr.msu.edu/api/auth/login \
+  -d "user=admin&passwd=test123"
